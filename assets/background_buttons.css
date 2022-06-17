@@ -1,0 +1,43 @@
+.btn-group button {
+    background-color: transparent; /* Green background */
+    border: 2px solid #fff; /* Green border */
+    box-shadow:
+                0 0 0.5rem var(--light-pink),
+                inset 0 0 0.5rem var(--light-pink),
+                0 0 0.5rem var(--deep-pink),
+                inset 0 0 0.5rem var(--deep-pink);
+    color: white; /* White text */
+    text-shadow: var(--glowing);
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    font-size: large;
+    border-radius: 8px;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #fff;
+}
+
+.btn-group button:active {
+    background-color:black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+}
+
+/* Left and right column */
+/* .column.side {
+    width: 25%;
+} */

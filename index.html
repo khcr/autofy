@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Autogeneration Lofi</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="play_button.css">
+        <link rel="stylesheet" href="background_buttons.css">
+        <link rel="stylesheet" href="moving_cursor.css">
+        <!-- <link rel="stylesheet" href="background.css"> -->
+    </head>
+
+    <body onload="startGame()">
+        <div class="row">
+            <div class="column1">
+                <div>
+                    <input type="checkbox" id="tgl-button" name="tgl-button">
+                    <label for="tgl-button"><span class="button play" style="margin-left: 30%; margin-top: 10%"></span></label>
+                </div>
+                <div style="margin-top: 10%;">
+                    <label for="bpm" style="color: #fff; text-shadow: var(--glowing);">BPM :</label>
+                    <input style="width: 30%; background-color: transparent; color: #fff; text-shadow: var(--glowing); 
+                            font-size: larger; border: transparent;" 
+                            type="number" id="bpm" name="bpm" value="80">
+                </div>
+                <div id="canvas" style="margin-top: 10%;"></div>
+            </div>
+
+            <div class="column3">
+                <div>
+                    <h1>
+                        Choose your background weather
+                    </h1>
+                    <div class="btn-group" id="backgrdbtn">
+                        <button value="hot summer night" data-value1="#020476" data-value2="#061e92">Hot summer night</button>
+                        <button value="thunder" data-value1="#60007a" data-value2="#e68aff">Thunder</button>
+                        <button value="light rain" data-value1="#74ccf4" data-value2="#5abcd8">Light rain</button>
+                        <button value="sunny morning" data-value1="#fdff00" data-value2="#6cffb1">Sunny morning</button>
+                        <button value="no" data-value1="#FF69B4" data-value2="#FF1493">No background</button>
+                    </div>
+                    <h2 id="backButtonState">You are listening music in no background</h2>
+                </div>
+                <div style="padding-top: 10%;">
+                    <h1>
+                        Choose your place
+                    </h1>
+                    <div class="btn-group" id="placesbtn">
+                        <div>
+                            <button value="a coffee shop">Coffee shop</button>
+                            <button value="the city">City</button>
+                            <button value="the sea">Sea</button>
+                            <button value="a forest">Forest</button>
+                        </div>
+                        <div>
+                            <button value="the countryside">Countryside</button>
+                            <button value="space">Space</button>
+                            <button value="a fireplace">Fireplace</button>
+                            <button value="nowhere">Nowhere</button>
+                        </div>
+                    </div>
+                    <h2 id="placeButtonState">You are listening music in nowhere</h2>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

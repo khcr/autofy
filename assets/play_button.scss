@@ -1,0 +1,41 @@
+*, *:before, *:after {box-sizing: border-box;}
+
+[name="tgl-button"] {
+  position: fixed;
+  top: -2000px;
+  left: -2000px;
+  
+  + label {
+    display: inline-block;
+    // margin: 200px 150px 0;
+    cursor: pointer;
+  }
+  
+  + label .button {
+    //width: 20px;
+    // height: 200px;
+    display: block;
+    
+    &.play {
+      border: 50px solid transparent;
+      border-left-color: var(--light-pink);
+      border-width: 50px 0 50px 100px;
+      // box-shadow: inset 0 0 6px 3px #fff,  /* inner white */
+      //             inset 0 0 10px 6px #f0f, /* middle magenta */
+      //             inset 0 0 14px 9px #0ff; /* outer cyan */
+      transition: .3s;
+    }
+  }
+  
+  &:checked {
+    + label .button {
+      &.play {
+        border: 50px solid transparent;
+        border-width: 50px 0px 50px 20px;
+        border-color: var(--light-pink);
+        box-shadow: 40px 0 0 0 var(--light-pink);
+        margin-right: 80px;
+      }
+    }
+  }
+}

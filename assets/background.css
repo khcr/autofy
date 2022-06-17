@@ -1,0 +1,80 @@
+html {
+  font: 5vmin/1.3 Serif;
+  overflow: hidden;
+  background: #123;
+}
+
+body, head {
+  display: block;
+  font-size: 52px;
+  color: transparent;
+}
+
+head::before, head::after,
+body::before, body::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  content: '.';
+  mix-blend-mode: screen;
+  -webkit-animation: 44s -27s move infinite ease-in-out alternate;
+          animation: 44s -27s move infinite ease-in-out alternate;
+  z-index: -1;
+}
+
+body::before {
+  text-shadow: 2.39199em -0.11387em 7px rgba(235, 0, 255, 0.9), 0.47374em 1.9386em 7px rgba(0, 46, 255, 0.9), 1.01429em 2.21141em 7px rgba(0, 213, 255, 0.9), 0.53222em 0.72498em 7px rgba(0, 255, 243, 0.9), 2.38293em 0.66818em 7px rgba(145, 0, 255, 0.9), 0.95282em 0.91457em 7px rgba(218, 0, 255, 0.9), 0.54001em 1.92257em 7px rgba(255, 3, 0, 0.9), 1.02546em 0.88325em 7px rgba(101, 255, 0, 0.9), -0.28944em 1.8018em 7px rgba(41, 0, 255, 0.9), 1.50076em 1.38246em 7px rgba(255, 92, 0, 0.9), 1.5474em 2.4731em 7px rgba(0, 255, 109, 0.9), 0.87806em 1.28698em 7px rgba(0, 170, 255, 0.9), -0.08815em 1.59126em 7px rgba(0, 255, 56, 0.9), 1.25352em 1.96266em 7px rgba(172, 0, 255, 0.9), 1.30643em 1.89696em 7px rgba(255, 79, 0, 0.9), 2.42579em -0.49347em 7px rgba(0, 2, 255, 0.9), 1.0482em 1.80452em 7px rgba(9, 255, 0, 0.9), 1.00636em 1.07688em 7px rgba(255, 47, 0, 0.9), -0.39511em 2.475em 7px rgba(254, 255, 0, 0.9), -0.43075em 2.43612em 7px rgba(0, 78, 255, 0.9), 0.20829em 0.31679em 7px rgba(34, 0, 255, 0.9), 1.31218em 0.45962em 7px rgba(255, 0, 64, 0.9), 1.44921em 2.39272em 7px rgba(0, 85, 255, 0.9), -0.24889em 2.06487em 7px rgba(255, 0, 25, 0.9), 0.19519em -0.33086em 7px rgba(255, 0, 253, 0.9), 2.43411em 1.41528em 7px rgba(0, 84, 255, 0.9), 1.61674em 0.24495em 7px rgba(236, 255, 0, 0.9), -0.25683em 1.25018em 7px rgba(255, 0, 210, 0.9), 1.62437em 0.61771em 7px rgba(117, 0, 255, 0.9), 1.92468em 1.1953em 7px rgba(255, 116, 0, 0.9), 1.53997em 1.58752em 7px rgba(0, 203, 255, 0.9), 0.06592em 2.23173em 7px rgba(255, 0, 186, 0.9), 0.22285em 1.82206em 7px rgba(53, 0, 255, 0.9), 1.58897em 2.38412em 7px rgba(0, 15, 255, 0.9), 0.34075em 2.1109em 7px rgba(0, 127, 255, 0.9), -0.15054em 2.0216em 7px rgba(255, 0, 182, 0.9), 2.04305em 0.99366em 7px rgba(241, 255, 0, 0.9), 0.10375em 0.19101em 7px rgba(17, 0, 255, 0.9), 2.18387em 1.33498em 7px rgba(233, 0, 255, 0.9), 1.76247em 1.8706em 7px rgba(255, 63, 0, 0.9), 1.38878em 2.24999em 7px rgba(255, 222, 0, 0.9);
+  -webkit-animation-duration: 44s;
+          animation-duration: 44s;
+  -webkit-animation-delay: -27s;
+          animation-delay: -27s;
+}
+
+body::after {
+  text-shadow: 2.49132em 2.18687em 7px rgba(255, 10, 0, 0.9), 1.70816em -0.3907em 7px rgba(253, 255, 0, 0.9), 1.42083em 0.32708em 7px rgba(0, 37, 255, 0.9), 0.7502em 0.38334em 7px rgba(126, 0, 255, 0.9), 1.51627em 1.9085em 7px rgba(0, 255, 51, 0.9), 0.34992em 0.42243em 7px rgba(0, 255, 211, 0.9), 1.97658em 0.43621em 7px rgba(255, 92, 0, 0.9), 1.57735em 0.81929em 7px rgba(255, 4, 0, 0.9), -0.28235em 2.17655em 7px rgba(255, 201, 0, 0.9), 2.30921em 2.05788em 7px rgba(228, 0, 255, 0.9), 1.50932em 0.97462em 7px rgba(136, 0, 255, 0.9), 1.12556em 0.19747em 7px rgba(0, 255, 70, 0.9), 1.38652em 0.99326em 7px rgba(17, 255, 0, 0.9), -0.46641em 0.46162em 7px rgba(0, 255, 113, 0.9), -0.09767em 0.81832em 7px rgba(255, 205, 0, 0.9), 0.91106em -0.10159em 7px rgba(255, 0, 209, 0.9), 0.8015em 0.1849em 7px rgba(26, 0, 255, 0.9), 0.68249em 0.50567em 7px rgba(0, 7, 255, 0.9), 1.60793em 1.8539em 7px rgba(0, 56, 255, 0.9), -0.00249em 0.84954em 7px rgba(0, 19, 255, 0.9), 1.15116em 1.55507em 7px rgba(255, 0, 208, 0.9), 1.25355em 2.47269em 7px rgba(5, 0, 255, 0.9), -0.29098em -0.00342em 7px rgba(255, 0, 180, 0.9), 0.29361em 2.14529em 7px rgba(0, 255, 207, 0.9), 1.8927em 0.67023em 7px rgba(47, 255, 0, 0.9), 0.81178em 0.81715em 7px rgba(0, 72, 255, 0.9), 0.30078em 0.26314em 7px rgba(0, 26, 255, 0.9), 1.31889em -0.12225em 7px rgba(0, 255, 112, 0.9), 1.93409em 0.16608em 7px rgba(255, 0, 80, 0.9), 1.02922em 0.49936em 7px rgba(255, 0, 33, 0.9), -0.26869em -0.25129em 7px rgba(189, 255, 0, 0.9), -0.49922em 1.48605em 7px rgba(207, 0, 255, 0.9), -0.49846em 1.1848em 7px rgba(70, 255, 0, 0.9), 0.05119em 1.46955em 7px rgba(0, 131, 255, 0.9), 0.22856em -0.03623em 7px rgba(0, 128, 255, 0.9), 1.40524em 2.12453em 7px rgba(255, 248, 0, 0.9), 1.12072em 1.76078em 7px rgba(43, 255, 0, 0.9), 1.89302em 0.5106em 7px rgba(255, 151, 0, 0.9), 1.69939em 2.47247em 7px rgba(255, 0, 163, 0.9), 2.2101em 0.7402em 7px rgba(255, 191, 0, 0.9), 2.12833em 0.76514em 7px rgba(0, 255, 169, 0.9);
+  -webkit-animation-duration: 43s;
+          animation-duration: 43s;
+  -webkit-animation-delay: -32s;
+          animation-delay: -32s;
+}
+
+head::before {
+  text-shadow: 1.14847em 2.40853em 7px rgba(248, 0, 255, 0.9), 0.16007em -0.28155em 7px rgba(255, 165, 0, 0.9), -0.24661em 0.53402em 7px rgba(163, 255, 0, 0.9), 0.89982em 2.06709em 7px rgba(255, 0, 211, 0.9), 1.35992em 2.41022em 7px rgba(255, 227, 0, 0.9), -0.23221em 1.28051em 7px rgba(255, 152, 0, 0.9), -0.31858em 0.63182em 7px rgba(237, 0, 255, 0.9), 1.63546em 2.43751em 7px rgba(0, 255, 131, 0.9), 1.94782em 1.73704em 7px rgba(255, 2, 0, 0.9), 0.42286em 2.40543em 7px rgba(167, 255, 0, 0.9), 0.4187em 0.91897em 7px rgba(255, 196, 0, 0.9), 2.49709em 0.18682em 7px rgba(255, 167, 0, 0.9), 0.28135em 2.20269em 7px rgba(255, 0, 217, 0.9), 1.7312em 0.1995em 7px rgba(225, 255, 0, 0.9), 1.23643em 0.16393em 7px rgba(46, 255, 0, 0.9), -0.46275em 1.94563em 7px rgba(199, 255, 0, 0.9), 0.4349em 0.65306em 7px rgba(255, 0, 166, 0.9), 1.60337em 1.69351em 7px rgba(0, 255, 229, 0.9), 1.17115em 2.01077em 7px rgba(255, 41, 0, 0.9), 1.50121em -0.09467em 7px rgba(255, 94, 0, 0.9), 1.88748em -0.1894em 7px rgba(255, 0, 152, 0.9), 2.10662em 0.76297em 7px rgba(255, 28, 0, 0.9), 1.08368em -0.17262em 7px rgba(16, 0, 255, 0.9), -0.08975em 1.67557em 7px rgba(255, 189, 0, 0.9), 1.61123em -0.44321em 7px rgba(0, 135, 255, 0.9), 1.0596em 2.39652em 7px rgba(0, 255, 130, 0.9), 0.7001em -0.17303em 7px rgba(0, 106, 255, 0.9), 0.5691em 0.67682em 7px rgba(255, 199, 0, 0.9), -0.20341em 0.8229em 7px rgba(54, 0, 255, 0.9), 1.16838em 0.72635em 7px rgba(0, 255, 120, 0.9), 2.49357em -0.05638em 7px rgba(50, 0, 255, 0.9), 1.59678em -0.35972em 7px rgba(255, 38, 0, 0.9), 0.41581em 0.83697em 7px rgba(7, 255, 0, 0.9), 0.11706em 1.5019em 7px rgba(255, 136, 0, 0.9), -0.14467em 2.35527em 7px rgba(0, 255, 130, 0.9), 1.87078em 1.88311em 7px rgba(138, 0, 255, 0.9), 2.11227em 2.01176em 7px rgba(255, 0, 74, 0.9), 0.75588em -0.22678em 7px rgba(65, 0, 255, 0.9), 1.32425em -0.30548em 7px rgba(255, 221, 0, 0.9), 0.42873em -0.21513em 7px rgba(98, 255, 0, 0.9), 2.38347em 1.25221em 7px rgba(255, 0, 128, 0.9);
+  -webkit-animation-duration: 42s;
+          animation-duration: 42s;
+  -webkit-animation-delay: -23s;
+          animation-delay: -23s;
+}
+
+head::after {
+  text-shadow: 0.91135em 1.18302em 7px rgba(120, 0, 255, 0.9), 0.58189em 1.17175em 7px rgba(255, 117, 0, 0.9), -0.44254em 1.37407em 7px rgba(165, 255, 0, 0.9), 0.31846em -0.05082em 7px rgba(13, 0, 255, 0.9), 2.48551em 2.11658em 7px rgba(255, 0, 155, 0.9), 0.48411em 1.82292em 7px rgba(206, 0, 255, 0.9), 2.00014em 2.27674em 7px rgba(255, 0, 215, 0.9), 0.80006em -0.00839em 7px rgba(61, 0, 255, 0.9), -0.43074em 1.52952em 7px rgba(0, 255, 77, 0.9), 1.05795em 1.86431em 7px rgba(255, 0, 64, 0.9), -0.05158em 1.46198em 7px rgba(255, 0, 115, 0.9), -0.26366em 0.02015em 7px rgba(0, 110, 255, 0.9), -0.4664em 0.55877em 7px rgba(255, 53, 0, 0.9), 0.00015em -0.29299em 7px rgba(255, 218, 0, 0.9), 1.64875em 0.15874em 7px rgba(168, 255, 0, 0.9), 0.13652em 1.8119em 7px rgba(255, 0, 67, 0.9), 2.4682em 1.91251em 7px rgba(0, 255, 210, 0.9), 0.27843em 0.09171em 7px rgba(255, 181, 0, 0.9), 2.46613em 0.84526em 7px rgba(211, 0, 255, 0.9), 0.33532em 2.44006em 7px rgba(0, 148, 255, 0.9), -0.2448em 0.30264em 7px rgba(255, 181, 0, 0.9), 2.0337em 0.91402em 7px rgba(0, 69, 255, 0.9), -0.37943em 1.60982em 7px rgba(255, 0, 18, 0.9), 1.6936em 0.58192em 7px rgba(0, 0, 255, 0.9), 0.54355em -0.24537em 7px rgba(70, 0, 255, 0.9), 1.89142em 2.11805em 7px rgba(128, 255, 0, 0.9), 0.71387em 2.00813em 7px rgba(255, 0, 136, 0.9), 2.30872em 0.47197em 7px rgba(0, 172, 255, 0.9), 0.94509em 2.13167em 7px rgba(217, 0, 255, 0.9), 1.22497em 0.72884em 7px rgba(0, 255, 38, 0.9), 0.23004em 1.25375em 7px rgba(0, 255, 246, 0.9), 0.23153em 2.45937em 7px rgba(0, 134, 255, 0.9), 2.11695em 1.81592em 7px rgba(17, 255, 0, 0.9), 0.60875em -0.19876em 7px rgba(0, 255, 128, 0.9), 0.31681em -0.1822em 7px rgba(103, 255, 0, 0.9), 1.94059em -0.32073em 7px rgba(251, 255, 0, 0.9), 1.72932em 2.44023em 7px rgba(255, 118, 0, 0.9), 1.91812em 0.31461em 7px rgba(0, 247, 255, 0.9), 1.19979em -0.1002em 7px rgba(194, 255, 0, 0.9), 1.27458em 2.35431em 7px rgba(0, 109, 255, 0.9), -0.01844em -0.14489em 7px rgba(164, 255, 0, 0.9);
+  -webkit-animation-duration: 41s;
+          animation-duration: 41s;
+  -webkit-animation-delay: -19s;
+          animation-delay: -19s;
+}
+
+@-webkit-keyframes move {
+  from {
+    -webkit-transform: rotate(0deg) scale(12) translateX(-20px);
+            transform: rotate(0deg) scale(12) translateX(-20px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(18) translateX(20px);
+            transform: rotate(360deg) scale(18) translateX(20px);
+  }
+}
+
+@keyframes move {
+  from {
+    -webkit-transform: rotate(0deg) scale(12) translateX(-20px);
+            transform: rotate(0deg) scale(12) translateX(-20px);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(18) translateX(20px);
+            transform: rotate(360deg) scale(18) translateX(20px);
+  }
+}
+/*# sourceMappingURL=background.css.map */

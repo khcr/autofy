@@ -1,0 +1,62 @@
+:root {
+    --light-pink: #FF69B4;
+    --deep-pink: #FF1493;
+    --glowing: 0px 0px 2px var(--light-pink),
+                0px 0px 15px var(--deep-pink),
+                0px 0px 60px var(--deep-pink);
+}
+
+html {
+    font: 5vmin/1.3 Serif;
+    overflow: hidden;
+    background-image: url('lofi_background.png');
+    background-size: cover;
+    background-position-y: 10%;
+}
+
+body {
+    font-family: "VT323", monospace;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.column2 {
+    display: flex;
+    margin: auto;
+}
+
+.column3 {
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    /* margin-left: 30%; */
+    width: 20%;
+}
+
+h1 {
+    font-size: xx-large;
+    text-align: left;
+    font-family: "VT323", monospace;
+    color: #fff;
+    padding: 10% 10% 0% 5%;
+    text-shadow: var(--glowing)
+    /* animation: flicker 1.5s infinite alternate; */
+}
+
+h2 {
+    font-size: x-large;
+    text-align: left;
+    font-family: "VT323", monospace;
+    color: #fff;
+    text-shadow: var(--glowing)
+    /* animation: flicker 1.5s infinite alternate; */
+}
