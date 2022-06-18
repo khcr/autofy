@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from pythonosc import osc_message_builder
 from pythonosc import udp_client
 import random
@@ -12,7 +12,8 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/osc-request/:category/:value", methods=["POST"])
-def osc_request(category, value):
-    sender.send_message(category, value)
-    return 200
+@app.route("/osc-request", methods=["POST"])
+def osc_request():
+    data = request.json
+    sender.send_message(data['path'], data['value'])
+    return {}
