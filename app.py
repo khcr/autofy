@@ -3,6 +3,7 @@ from pythonosc import osc_message_builder
 from pythonosc import udp_client
 import random
 
+# client for Sonic Pi
 sender = udp_client.SimpleUDPClient('127.0.0.1', 4560)
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/osc-request")
-def osc_request():
-    sender.send_message('/rate', random.randint(1, 10))
-    return ""
+@app.route("/osc-request/:category/:value", methods=["POST"])
+def osc_request(category, value):
+    sender.send_message(category, value)
+    return 200
