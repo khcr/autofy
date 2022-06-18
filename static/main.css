@@ -9,13 +9,13 @@
 html {
     font: 5vmin/1.3 Serif;
     overflow: hidden;
-    background-image: url('lofi_background_sunny.png');
-    background-size: cover;
-    background-position-y: 10%;
 }
 
 body {
     font-family: "VT323", monospace;
+    background-image: url('./lofi_background_sunny.png');
+    background-size: cover;
+    background-position-y: 10%;
 }
 
 .row {
