@@ -4,6 +4,7 @@
     --glowing: 0px 0px 2px var(--light-pink),
                 0px 0px 15px var(--deep-pink),
                 0px 0px 60px var(--deep-pink);
+    --background-image: url('./lofi_background_sunny.png');
 }
 
 html {
@@ -13,7 +14,7 @@ html {
 
 body {
     font-family: "VT323", monospace;
-    background-image: url('./lofi_background_sunny.png');
+    background-image: var(--background-image);
     background-size: cover;
     background-position-y: 10%;
 }

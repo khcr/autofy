@@ -11,9 +11,7 @@ background_button.onclick = (button) => {
     document.documentElement.style.setProperty('--light-pink', button.srcElement.dataset.value1);
     document.documentElement.style.setProperty('--deep-pink', button.srcElement.dataset.value2);
     if (button.srcElement.dataset.value3 != "None")
-        console.log("url('./" + button.srcElement.dataset.value3 + "');")
-        console.log(document.documentElement.style.backgroundImage)
-        document.body.style.backgroundImage = "url('./" + button.srcElement.dataset.value3 + "');"
+        document.documentElement.style.setProperty('--background-image', "url('./" + button.srcElement.dataset.value3 + "')")
     document.getElementById("backButtonState").innerHTML = "<p>You are listening music with " + button.srcElement.value + " background"
 
     // update the music
@@ -27,6 +25,8 @@ background_button.onclick = (button) => {
 // Places selection
 const places_button = document.querySelector('#placesbtn')
 places_button.onclick = (button) => {
+    if (button.srcElement.dataset.value1 != null)
+    document.documentElement.style.setProperty('--background-image', "url('./" + button.srcElement.dataset.value1 + "')")
     document.getElementById("placeButtonState").innerHTML = "<p>You are listening music in " + button.srcElement.value
 }
 
