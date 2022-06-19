@@ -20,14 +20,14 @@ The interface is basically seperate in two collumns. The right one have three di
 The second collumns controls all possible background effect or ambiance that you want. By clicking on them you can have sound from a particular weather or a particular place in background of the music. Also you could see the background image changing depending on which background you choose.
 ### Overall structure
 Hopefully you know a little bit about music!
-We decided to have song-like structures, to try to simulate the radio effect, where songs change one after the other. A song is made different stages: a beginning, a "normal" middle part (`NOR1`), a bridge, another "normal" middle part(`NOR2`), and an end. In pop music, the normal middle part is usually the verse and chorus. A counter counts each beat, and signals when a change is made between each stage, and also when the song ends (the counter has reached the end stage). The stages have a randomized duration, to get the songs to last between 3 and 6 minutes no matter the speed.
+We decided to have song-like structures, to try to simulate the radio effect, where songs change one after the other. A song is made different stages: a beginning, a "normal" middle part (`NOR1`), a bridge, another "normal" middle part(`NOR2`), and an end. In pop music, the normal middle part is usually the verse and chorus. A counter counts each beat, and signals when a change is made between each stage, and also when the song ends (the counter has reached the end stage). The stages have a randomized duration, to get the songs to last between 3 and 6 minutes no matter the tempo.
 
 Inside a stage, the structure is in loop of 2 measures (meaning 8 beats).
 ### Rhythm
 The rhythm is dependent of one user parameters: the intensity which ranges from 0 to 5. At 0, there is no rhythm, at 1 a bit more and etc. until 5. To be able to code the different rhythms, one can imagine that the 2 measures form a grid of semi-quavers (so 32 in total), and we place the different rhythms that we want to play on this grid. To make it a bit more entertaining, there is a lot of different randomization: many sounds have a randomized amplitude, some instruments are added or removed according to the song (to have a difference between two songs). 
 Effects are also added to the rhythms according to the stage we are at: at the end of a song, the global rhythm amplitude decays, and comes back at the beginning of the next song. During the bridge, a low pass filter was added for some songs, to give a muffled sound. 
-### Chords
-
+### Chord Progressions
+The chords are grouped in themes, which are always made of 4 chords. The themes are made manually but can be transposed in any key (see <em>chords_list.rb</em>). The theme selection depends on the mood controler pannel. To match the desired mood, several modes (scales) are used. The modes used are (from happiest to saddest) : "mixolydian", "lydian", "major", "minor", "dorian", "harmonic major". The themes are generated when the song section changes : at the beginning of the song, when passing from the normal part to the bridge, and inversely. To ensure a smooth transition form a theme to another, a cadence is placed between the two, which is computed according to the key and the mode of each theme.
 
 ### Melody
 ### Background
