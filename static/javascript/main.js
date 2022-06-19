@@ -47,6 +47,9 @@ function set_background(weather, place) {
         url = getURLName("", place)
     } else if (place == "coffeeShop" && (weather == "thunder" || weather == "night")) {
         url = getURLName("night", place)
+    } else if (place == "countrySide" && (weather == "thunder" || weather == "rain")) {
+        url = "url('./rain.gif'), " + getURLName(weather, place)
+
     } else {
         url = getURLName(weather, place)
     }

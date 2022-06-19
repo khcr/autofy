@@ -15,6 +15,7 @@ html {
 body {
     font-family: "VT323", monospace;
     background-image: var(--background-image);
+    /* background-image: url('./lofi_background_sunny_countrySide.png'), url(./rain.gif), ; */
     background-size: cover;
     background-position-y: 10%;
 }
