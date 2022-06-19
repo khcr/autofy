@@ -27,7 +27,7 @@ Inside a stage, the structure is in loop of 2 measures (meaning 8 beats).
 The rhythm is dependent of one user parameters: the intensity which ranges from 0 to 5. At 0, there is no rhythm, at 1 a bit more and etc. until 5. To be able to code the different rhythms, one can imagine that the 2 measures form a grid of semi-quavers (so 32 in total), and we place the different rhythms that we want to play on this grid. To make it a bit more entertaining, there is a lot of different randomization: many sounds have a randomized amplitude, some instruments are added or removed according to the song (to have a difference between two songs). 
 Effects are also added to the rhythms according to the stage we are at: at the end of a song, the global rhythm amplitude decays, and comes back at the beginning of the next song. During the bridge, a low pass filter was added for some songs, to give a muffled sound. 
 ### Chord Progressions
-The chords are grouped in themes, which are always made of 4 chords. The themes are made manually but can be transposed in any key (see <em>chords_list.rb</em>). The theme selection depends on the mood controler pannel. To match the desired mood, several modes (scales) are used. The modes used are (from happiest to saddest) : "mixolydian", "lydian", "major", "minor", "dorian", "harmonic major". The themes are generated when the song section changes : at the beginning of the song, when passing from the normal part to the bridge, and inversely. To ensure a smooth transition form a theme to another, a cadence is placed between the two, which is computed according to the key and the mode of each theme.
+The chords are grouped in themes, which are always made of 4 chords. The themes are created manually but can be transposed in any key (see <em>chords_list.rb</em>). The theme selection depends on the mood controler pannel. To match the desired mood, several modes (scales) are used. The modes used are (from happiest to saddest) : "mixolydian", "lydian", "major", "minor", "dorian", "harmonic major". The themes are generated at the following song section changes : at the beginning of the song, when passing from the normal part to the bridge, and inversely. To ensure a smooth transition form a theme to another, a cadence is placed between them, which is computed according to the key and the mode of each theme.
 
 ### Melody
 ### Background
@@ -44,8 +44,12 @@ and different places:
 - Space (I will let you discover this one by yourself...)
 - Nowhere 
 
-### Effects 
-blablabla
+### Instruments Effects 
+The chords are played by 3 instruments : synth keys, pads and bass.
+- The synth keys sweep through each chord. The duration of the sweep is set randomly for each chord. the chords are placed randomly on the down and up beats. The instrument is built as a sine wave going through a light distortion, a formant filter and finally a reverb. it imitates the sound of an electric piano or a Rhodes.
+- the pads play all notes of one chord at the same time but transpose one octave higher, the chords are played at regular interval. The instrument is built as an ambiant pad synth going through a distortion and a high-pass filter. It is used to fill the space and the high-passed distortion add a <em>lofi grain</em> to the sound.
+- the bass plays only the first note of each chord tranposed 2 octaves lower. It is a basic sine wave with an envelop with long decay.
+The melody is played by a caverneous sounding synth passing through a reverb. Each note is randomly panned to add movement to the music.
 
 ## Useful commands
 
