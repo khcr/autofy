@@ -45,7 +45,7 @@ function set_background(weather, place) {
     var url = null
     if (place == "space") {
         url = getURLName("", place)
-    } else if (place == "coffeeShop" && (weather == "thunder" || weather == "rain")) {
+    } else if (place == "coffeeShop" && (weather == "thunder" || weather == "night")) {
         url = getURLName("night", place)
     } else {
         url = getURLName(weather, place)
