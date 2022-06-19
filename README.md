@@ -84,6 +84,7 @@ SonicPi is a great tool to play with music, but the distribution of the outcome 
 - A SonicPi instance running the code and producing the music based on parameters
 - A audio streaming server (e.g Icecast)
 - A webserver serving the user interface and exposing an API to talk with SonicPi
+
 The main challenge is to deal with SonicPi, which was not designed for such purpose. Therefore, we have not reached the final goal yet. As of today, we can run a headless (without GUI) SonicPi server and control it via OSC requests. OSC stands for Open Sound Control and is a protocol for audio networking. OSC is well supported by SonicPi, which can be exclusively controlled via OSC requests (e.g run code or stop the music, update parameters, etc). The current website is fully working, but instead of playing music from a stream, it is a remote for SonicPi, i.e. it controls what SonicPi outputs.
 
 ### Installation
