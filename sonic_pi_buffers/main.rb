@@ -1,9 +1,9 @@
 #USER DEFINABLE VARIABLES
-set :bpm, 90
-set :weather, "light_rain"
-set :place, "forest"
-set :intensity, 3 #from 0 to 5
-set :mood, 3 #from 0 to 5
+set :bpm, $rate
+set :weather, '$weather'
+set :place, '$place'
+set :intensity, $intensity # from 0 to 5
+set :mood, $mood # from 0 to 5
 
 #GLOBAL VARIABLES
 #global global ones

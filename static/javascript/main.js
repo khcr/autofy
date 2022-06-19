@@ -1,7 +1,15 @@
+
+// State of the music
+const STATE = { rate: 90, weather: 'no', place: 'nowhere', intensity: 2, mood: 2 };
+
 // Play / Pause button
 const playButton = document.querySelector('#tgl-button')
 playButton.onclick = () => {
-    console.log(playButton.checked);
+    if (playButton.checked) {
+        play_music();
+    } else {
+        stop_music();
+    }
 };
 
 var weather_state = "sunny"
@@ -20,11 +28,8 @@ background_button.onclick = (button) => {
     document.getElementById("backButtonState").innerHTML = "<p>You are listening music with " + button.srcElement.value + " background"
 
     // update the music
-    const data = {
-        "path" : "rate",
-        "value" : 10
-    }
-    osc_request(data);
+    STATE['weather'] = button.srcElement.value;
+    update_music();
 }
 
 // Places selection
@@ -35,7 +40,18 @@ places_button.onclick = (button) => {
         set_background(weather_state, place_state)
     //document.documentElement.style.setProperty('--background-image', "url('./" + button.srcElement.dataset.value1 + "')")
     document.getElementById("placeButtonState").innerHTML = "<p>You are listening music in " + button.srcElement.value
+
+    // update the music
+    STATE['place'] = button.srcElement.value;
+    update_music();
 }
+
+// BPM
+const rate_input = document.querySelector('#bpm');
+rate_input.addEventListener('change', () => {
+    STATE['rate'] = parseInt(rate_input.value);
+    update_music();
+});
 
 function getURLName(weather, place) {
     return "url('./lofi_background_" + weather + '_' + place + ".png')"
@@ -53,11 +69,22 @@ function set_background(weather, place) {
     } else {
         url = getURLName(weather, place)
     }
-    console.log(url)
     document.documentElement.style.setProperty('--background-image', url)
 }
 
-function osc_request(data) {
+function update_music() {
+    post_json("update", STATE);
+}
+
+function play_music() {
+    post_json("start", STATE);
+}
+
+function stop_music() {
+    post_json("stop", {});
+}
+
+function post_json(path, data) {
     const post =  {
         method: "POST",
         headers: {
@@ -65,10 +92,10 @@ function osc_request(data) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }
-    fetch("http://127.0.0.1:5000/osc-request", post).then(response => {
+    };
+    fetch("http://127.0.0.1:5000/" + path, post).then(response => {
         if (!response.ok) {
-            throw new Error(`Request failed with status ${reponse.status}`)
+            throw new Error(`Request failed with status ${response.status}`)
         }
     }).catch(error => console.log(error))
 }
