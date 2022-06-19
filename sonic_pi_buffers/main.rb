@@ -25,7 +25,6 @@ set :cur_theme_chords, (method(mode_theme(get(:cur_mode))).call(get(:cur_note)))
 set :theme_duration, 8 # 2 measures
 set :max_sweep, 0.8
 set :theme_rhythm, (theme_timestamps get(:theme_duration))
-#set :cadence_rhythm, (cadence_rhythm(get(:theme_duration),3))
 
 #STRUCTURE AND COUNTER
 set :current_stage, "BEGINNING"
@@ -60,7 +59,7 @@ define :get_stage do |counter|
   
 end
 
-#place and weather loop #TODO: change the sample size to be able to change directly
+#place and weather loop
 in_thread(name: :bckg_weather) do
   loop do
     sync :tick
@@ -94,7 +93,6 @@ in_thread(name: :chords) do
           
           sweep_theme cur_theme_chords, get(:theme_rhythm), get(:theme_duration), get(:max_sweep) #on joue le truc
           
-          #le moment ou ca passe a bridge: cadence
           next_stage = get_stage (get(:counter) + get(:theme_duration))
           if next_stage != current_stage and (next_stage == "BEGINNING" or next_stage == "BRIDGE" or next_stage == "NOR2")
             
@@ -158,14 +156,13 @@ end
 
 in_thread(name: :chill_rythm) do
   base_cutoff = 105
-  with_fx :compressor, threshold: 0.15,slope_below: 0.5,clamp_time: 0.01,slope_below: 2 do
+  with_fx :compressor, threshold: 0.15, slope_below: 2, clamp_time: 0.01 do
     with_fx :lpf,cutoff: base_cutoff  do |c|
       with_fx :level, amp: 0 do |a|
         loop do
           
           if get(:current_stage) == "BEGINNING"
             puts "---------- LENGTH BEG: #{get(:d_beg)} ----------"
-            #control c, cutoff: 130, cutoff_slide: get(:d_beg)
             control a, amp: 1, amp_slide: rrand(3, 10)
           end
           if get(:current_stage) == "NORMAL"
@@ -205,7 +202,6 @@ define :play_melody do |note,mode,theme,duration,prob_note|
   phrase_prob_array = [1,0,0,0].shuffle()
   note_prob_array = note_prob_array.zip(phrase_prob_array).map{|p1,p2| p1.to_f*p2.to_f}
   mode_map = {'major' => :major, 'dorian'=> :dorian,'lydian'=> :lydian,'mixolydian'=> :mixolydian,'minor'=> :minor,'harmonic_major'=>:harmonic_major}
-  #cur_mode = mode_map[mode]
   theme.zip(note_prob_array).each() do |c,p|
     case rrand_i(1,1)
     
@@ -217,7 +213,7 @@ define :play_melody do |note,mode,theme,duration,prob_note|
       
       arpeggio.each() do |n|
         if rrand(0,1) < p
-          play n,decay: rrand(0.5, 1),amp: amp_value,pan: rrand(min_pan, max_pan),decay: rrand(min_decay, max_decay)
+          play n, amp: amp_value, pan: rrand(min_pan, max_pan), decay: rrand(min_decay, max_decay)
         end
         sleep note_duration
         

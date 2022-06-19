@@ -27,8 +27,6 @@ define :cymbal do |more, place|
   
 end
 
-
-
 define :added_cymbal do |more, stage|
   if stage != "BEGINNING" and get(:song) == 45.times.map{Random.rand(50)}
     if more >= 5

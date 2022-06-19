@@ -9,7 +9,7 @@ define :background_weather do |weather|
     thunder
   elsif weather == "hot_summer_night"
     hot_summer_night
-  elsif weather == ""
+  elsif weather == "none"
     sleep 5
   end
   sleep 1
@@ -21,24 +21,12 @@ define :background_place do |place|
     city
   elsif place == "country_side"
     country_side
-  elsif place == "forest"
-    forest
   elsif place == "space"
     space
   elsif place == "coffee_shop"
     coffee_shop
-  elsif place == "fireplace"
-    fireplace
-  elsif place == "sea"
-    sea
-  elsif place == ""
+  elsif place == "none"
     sleep 5
   end
   sleep 1
-  
-  
-  
-  
 end
-
-

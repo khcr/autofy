@@ -1,7 +1,5 @@
 #CHORDS LIST
 
-# Welcome to Sonic Pi
-
 #THEMES AND CADENCES
 define :mode_theme do |mode|
   next_theme = []

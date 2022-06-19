@@ -54,25 +54,13 @@ define :next_theme_cadence do |current_theme,note,mode,mood,stage|
   
   when 1
     #modulate
-    #modes = ['major','minor','dorian','lydian', 'mixolydian','harmonic_major']
-    #modes.delete(mode)
     modes = modes_from_mood mood,stage
     next_mode = modes.choose
     theme =  method(mode_theme(next_mode)).call(note)
     cadence = method(modulation_cadence(mode,next_mode)).call(note)
     next_note = note
   when 2
-    #move to relative
-    #if mode == 'harmonic_major'
-    
-    #  next_note = note
-    #  next_mode = 'major'
-    #  cadence = method(modulation_cadence(mode,next_mode)).call(note)
-    #  theme = method(mode_theme(next_mode)).call(next_note)
-    #else
-    
-    #relative_modes = ['major','minor','dorian','lydian', 'mixolydian']
-    
+    #move to relative    
     modes = modes_from_mood mood,stage
     next_mode = modes.choose()
     relative_chord_map = {'major' => :major, 'dorian'=> :minor,'lydian'=> :major,'mixolydian'=> :major,'minor'=> :minor,'harmonic_major'=> :major}
@@ -121,15 +109,15 @@ define :modes_from_mood do |mood,stage|
   when 4
     modes = ['major','lydian','mixolydian']
   when 3
-    if stage = "BRIDGE"
+    if stage == "BRIDGE"
       modes = ['dorian','minor']
     else
       modes = ['major','lydian','mixolydian']
     end
   when 2
-    modes =['minor']
+    modes = ['minor']
   when 1
-    if stage = "BRIDGE"
+    if stage == "BRIDGE"
       modes = ['minor','harmonic_major']
     else
       modes = ['dorian']
