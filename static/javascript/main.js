@@ -51,7 +51,7 @@ rate_input.addEventListener('change', () => {
 });
 
 function getURLName(weather, place) {
-    return "url('images/lofi_background_" + weather + '_' + place + ".png')"
+    return "url('../images/lofi_background_" + weather + '_' + place + ".png')"
 }
 
 function set_background(weather, place) {

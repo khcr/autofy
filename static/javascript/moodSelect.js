@@ -13,7 +13,6 @@ var myGameArea = {
     start : function() {
         this.canvas.width = 370;
         this.canvas.height = 370;
-        // this.canvas.style.cursor = "none"; // hide the original cursor
         this.context = this.canvas.getContext("2d");
 
         document.getElementById("canvas").insertAdjacentElement("afterbegin", this.canvas);
@@ -31,8 +30,9 @@ var myGameArea = {
                 myGameArea.y = e.clientY - myGameArea.context.canvas.offsetTop - 5;
                 happiness_level = Math.round(myGameArea.x * nb_level / myGameArea.context.canvas.width);
                 speed_level = nb_level - Math.round(myGameArea.y * nb_level / myGameArea.context.canvas.height);
-                console.log(happiness_level, speed_level)
-                // document.getElementById("levelDisplayer").innerHTML = "Happiness level : " + happiness_level + "<p>Speed level : " + speed_level
+                STATE['mood'] = happiness_level;
+                STATE['intensity'] = speed_level;
+                update_music();
             } else {
                 isClick = false;
             }
