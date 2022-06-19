@@ -51,14 +51,13 @@ rate_input.addEventListener('change', () => {
 });
 
 function getURLName(weather, place) {
-    return "url('./lofi_background_" + weather + '_' + place + ".png')"
+    return "url('images/lofi_background_" + weather + '_' + place + ".png')"
 }
 
 function set_background(weather, place) {
     var url = null
     if (place == "space" || place == "None") {
         document.getElementById("backgrdbtn").classList.add("disablebackgrdbtn")
-        weather = "no"
         if (place == "space") {
             url = getURLName("", place)
         } else if (place == "None") {
@@ -80,6 +79,7 @@ function set_background(weather, place) {
 }
 
 function update_music() {
+    playButton.checked = true;
     post_json("update", STATE);
 }
 
