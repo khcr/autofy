@@ -9,11 +9,11 @@ set :mood, $mood # from 0 to 5
 #global global ones
 set :counter, 0
 set :song, 0
-set :d_beg,10 # rrand_i(get(:bpm)*8/60, get(:bpm)*25/60)
-set :d_bridge,10# rrand_i(get(:bpm)*40/60, get(:bpm))
-set :d_end,10# rrand_i(get(:bpm)*8/60, get(:bpm)*25/60)
-set :d_nor1,10 #rrand_i(get(:bpm)*120/60, get(:bpm)*140/60)
-set :d_nor2, 10#rrand_i(get(:bpm)*120/60, get(:bpm)*140/60)
+set :d_beg, rrand_i(get(:bpm)*8/60, get(:bpm)*25/60)
+set :d_bridge, rrand_i(get(:bpm)*40/60, get(:bpm))
+set :d_end, rrand_i(get(:bpm)*8/60, get(:bpm)*25/60)
+set :d_nor1, rrand_i(get(:bpm)*120/60, get(:bpm)*140/60)
+set :d_nor2, rrand_i(get(:bpm)*120/60, get(:bpm)*140/60)
 
 #for the chords
 set :cur_note, :c4
@@ -25,7 +25,7 @@ set :cur_theme_chords, (method(mode_theme(get(:cur_mode))).call(get(:cur_note)))
 set :theme_duration, 8 # 2 measures
 set :max_sweep, 0.8
 set :theme_rhythm, (theme_timestamps get(:theme_duration))
-set :cadence_rhythm, (cadence_rhythm get(:theme_duration))
+#set :cadence_rhythm, (cadence_rhythm(get(:theme_duration),3))
 
 #STRUCTURE AND COUNTER
 set :current_stage, "BEGINNING"
@@ -100,7 +100,7 @@ in_thread(name: :chords) do
             
             next_theme_chords,cadence_chords,next_mode,next_note = next_theme_cadence cur_theme_chords,cur_note,cur_mode, mood, current_stage
             theme_rhythm = theme_timestamps get(:theme_duration) #rythme accord
-            cadence_rhythm = cadence_rhythm get(:theme_duration) #rythme cadence
+            cadence_rhythm = cadence_rhythm get(:theme_duration),cadence_chords.length #rythme cadence
             
             #cadence
             sweep_theme cadence_chords, cadence_rhythm,get(:theme_duration), get(:max_sweep)
@@ -120,9 +120,13 @@ in_thread(name: :chords) do
 end
 
 in_thread(name: :melody) do
+  
   note_prob = (get(:intensity).to_f/5)/2 + 0.5
   with_fx :reverb do
     loop do
+      use_bpm get(:bpm)
+      sync :tick
+      
       use_synth :hollow
       play_melody get(:cur_note),get(:cur_mode),get(:cur_theme_chords),get(:theme_duration),note_prob
     end
@@ -130,7 +134,11 @@ in_thread(name: :melody) do
 end
 
 in_thread(name: :pads) do
+  
   loop do
+    use_bpm get(:bpm)
+    sync :tick
+    
     with_fx :hpf, cutoff: 90 do
       with_fx :distortion, distort: 0.6,mix:0.5 do
         use_synth :dark_ambience
@@ -148,34 +156,35 @@ in_thread(name: :pads) do
   end
 end
 
-
 in_thread(name: :chill_rythm) do
   base_cutoff = 105
-  with_fx :lpf,cutoff: base_cutoff  do |c|
-    with_fx :level, amp: 0 do |a|
-      loop do
-        
-        if get(:current_stage) == "BEGINNING"
-          puts "---------- LENGTH BEG: #{get(:d_beg)} ----------"
-          #control c, cutoff: 130, cutoff_slide: get(:d_beg)
-          control a, amp: 1, amp_slide: get(:d_beg)
+  with_fx :compressor, threshold: 0.15,slope_below: 0.5,clamp_time: 0.01,slope_below: 2 do
+    with_fx :lpf,cutoff: base_cutoff  do |c|
+      with_fx :level, amp: 0 do |a|
+        loop do
+          
+          if get(:current_stage) == "BEGINNING"
+            puts "---------- LENGTH BEG: #{get(:d_beg)} ----------"
+            #control c, cutoff: 130, cutoff_slide: get(:d_beg)
+            control a, amp: 1, amp_slide: rrand(3, 10)
+          end
+          if get(:current_stage) == "NORMAL"
+            puts "---------- LENGTH NORMAL: #{get(:d_nor1)},  #{get(:d_nor2)}----------"
+            control c, cutoff: base_cutoff, cutoff_slide: rrand(0, get(:d_beg))
+          end
+          if get(:current_stage) == "BRIDGE"
+            puts "---------- LENGTH BRIDGE: #{get(:d_bridge)} ----------"
+            control c, cutoff: choose([30, base_cutoff, base_cutoff, base_cutoff, base_cutoff]), cutoff_slide: rrand(5, 10)
+          end
+          if get(:current_stage) == "END"
+            puts "---------- LENGTH END: #{get(:d_end)} ----------"
+            control a, amp: 0.1, amp_slide: get(:d_end)
+          end
+          
+          use_bpm get(:bpm)
+          cue :tick
+          rythm get(:intensity),get(:place), get(:current_stage)
         end
-        if get(:current_stage) == "NORMAL"
-          puts "---------- LENGTH NORMAL: #{get(:d_nor1)},  #{get(:d_nor2)}----------"
-          control c, cutoff: base_cutoff, cutoff_slide: rrand(0, get(:d_beg))
-        end
-        if get(:current_stage) == "BRIDGE"
-          puts "---------- LENGTH BRIDGE: #{get(:d_bridge)} ----------"
-          control c, cutoff: choose([10, 20, base_cutoff, base_cutoff, base_cutoff, base_cutoff]), cutoff_slide: rrand(5, 10)
-        end
-        if get(:current_stage) == "END"
-          puts "---------- LENGTH END: #{get(:d_end)} ----------"
-          control a, amp: 0.1, amp_slide: get(:d_end)
-        end
-        
-        use_bpm get(:bpm)
-        cue :tick
-        rythm get(:intensity),get(:place), get(:current_stage)
       end
     end
   end
@@ -193,7 +202,7 @@ define :play_melody do |note,mode,theme,duration,prob_note|
   min_decay = 0.3
   max_decay = 0.8
   note_prob_array = [prob_note,prob_note,prob_note,prob_note].shuffle()
-  phrase_prob_array = [1,1,0,0].shuffle()
+  phrase_prob_array = [1,0,0,0].shuffle()
   note_prob_array = note_prob_array.zip(phrase_prob_array).map{|p1,p2| p1.to_f*p2.to_f}
   mode_map = {'major' => :major, 'dorian'=> :dorian,'lydian'=> :lydian,'mixolydian'=> :mixolydian,'minor'=> :minor,'harmonic_major'=>:harmonic_major}
   #cur_mode = mode_map[mode]
