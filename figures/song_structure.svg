@@ -21,9 +21,10 @@
 	.st15{display:inline;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st16{display:inline;fill:#662D91;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 	.st17{display:inline;fill:#FFFFFF;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st18{fill:none;}
-	.st19{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st20{stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st18{fill:#FFFFFF;}
+	.st19{fill:none;}
+	.st20{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st21{stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
 </style>
 <g id="Calque_1" class="st0">
 	<rect id="XMLID_28_" x="42.3" y="430.1" class="st1" width="107.6" height="23.8"/>
@@ -145,37 +146,38 @@
 	<text id="XMLID_55_" transform="matrix(1 0 0 1 541.6211 80.4287)" class="st2"><tspan x="0" y="0" class="st3 st13">Repeat, with modulation </tspan><tspan x="0" y="16" class="st3 st13">scheme updated  according </tspan><tspan x="0" y="32" class="st3 st13">to user parameters</tspan></text>
 </g>
 <g id="song_structure">
-	<rect id="XMLID_74_" x="69.1" y="357.3" class="st18" width="198.7" height="23.8"/>
+	<rect id="XMLID_24_" x="32.6" y="334.6" class="st18" width="654.5" height="284.9"/>
+	<rect id="XMLID_74_" x="69.1" y="357.3" class="st19" width="198.7" height="23.8"/>
 	<text id="XMLID_73_" transform="matrix(1 0 0 1 69.0803 371.9756)" class="st3 st4" style="text-decoration: underline;">Song Structure</text>
-	<rect id="XMLID_72_" x="82.1" y="406.8" class="st18" width="75.5" height="18.4"/>
+	<rect id="XMLID_72_" x="82.1" y="406.8" class="st19" width="75.5" height="18.4"/>
 	<text id="XMLID_71_" transform="matrix(1 0 0 1 82.066 417.0779)" class="st3 st7">Beginning</text>
-	<rect id="XMLID_118_" x="245.2" y="402" class="st18" width="462.8" height="18.4"/>
+	<rect id="XMLID_118_" x="245.2" y="402" class="st19" width="462.8" height="18.4"/>
 	<text id="XMLID_117_" transform="matrix(1 0 0 1 245.1988 412.3015)" class="st9 st7">Generate new theme, rythm is at low volume and low-passed</text>
-	<rect id="XMLID_67_" x="69.1" y="397.2" class="st19" width="102.6" height="27.9"/>
-	<rect id="XMLID_77_" x="81.5" y="451.1" class="st18" width="75.5" height="18.4"/>
+	<rect id="XMLID_67_" x="69.1" y="397.2" class="st20" width="102.6" height="27.9"/>
+	<rect id="XMLID_77_" x="81.5" y="451.1" class="st19" width="75.5" height="18.4"/>
 	<text id="XMLID_76_" transform="matrix(1 0 0 1 94.2501 461.4341)" class="st3 st7">Verse 1</text>
-	<rect id="XMLID_75_" x="68.6" y="441.6" class="st19" width="102.6" height="27.9"/>
-	<rect id="XMLID_112_" x="82.1" y="490.3" class="st18" width="75.5" height="18.4"/>
+	<rect id="XMLID_75_" x="68.6" y="441.6" class="st20" width="102.6" height="27.9"/>
+	<rect id="XMLID_112_" x="82.1" y="490.3" class="st19" width="75.5" height="18.4"/>
 	<text id="XMLID_111_" transform="matrix(1 0 0 1 98.1329 500.5635)" class="st3 st7">Bridge</text>
-	<rect id="XMLID_110_" x="69.1" y="480.7" class="st19" width="102.6" height="27.9"/>
-	<rect id="XMLID_109_" x="81" y="527.8" class="st18" width="75.5" height="18.4"/>
+	<rect id="XMLID_110_" x="69.1" y="480.7" class="st20" width="102.6" height="27.9"/>
+	<rect id="XMLID_109_" x="81" y="527.8" class="st19" width="75.5" height="18.4"/>
 	<text id="XMLID_108_" transform="matrix(1 0 0 1 93.7272 538.0625)" class="st3 st7">Verse 2</text>
-	<rect id="XMLID_107_" x="68" y="518.2" class="st19" width="102.6" height="27.9"/>
-	<line id="XMLID_116_" class="st20" x1="182.6" y1="411.2" x2="227.9" y2="411.2"/>
-	<rect id="XMLID_125_" x="245.2" y="448.4" class="st18" width="216.7" height="18.4"/>
+	<rect id="XMLID_107_" x="68" y="518.2" class="st20" width="102.6" height="27.9"/>
+	<line id="XMLID_116_" class="st21" x1="182.6" y1="411.2" x2="227.9" y2="411.2"/>
+	<rect id="XMLID_125_" x="245.2" y="448.4" class="st19" width="216.7" height="18.4"/>
 	<text id="XMLID_124_" transform="matrix(1 0 0 1 245.1988 458.6718)" class="st9 st7">Rythm is at full volume</text>
-	<line id="XMLID_119_" class="st20" x1="182.6" y1="457.6" x2="227.9" y2="457.6"/>
-	<rect id="XMLID_129_" x="245.2" y="485.5" class="st18" width="333" height="18.4"/>
+	<line id="XMLID_119_" class="st21" x1="182.6" y1="457.6" x2="227.9" y2="457.6"/>
+	<rect id="XMLID_129_" x="245.2" y="485.5" class="st19" width="333" height="18.4"/>
 	<text id="XMLID_128_" transform="matrix(1 0 0 1 245.1988 495.787)" class="st9 st7">Generate new theme</text>
-	<line id="XMLID_127_" class="st20" x1="182.6" y1="494.7" x2="227.9" y2="494.7"/>
-	<rect id="XMLID_132_" x="244.2" y="523" class="st18" width="333" height="18.4"/>
+	<line id="XMLID_127_" class="st21" x1="182.6" y1="494.7" x2="227.9" y2="494.7"/>
+	<rect id="XMLID_132_" x="244.2" y="523" class="st19" width="333" height="18.4"/>
 	<text id="XMLID_131_" transform="matrix(1 0 0 1 244.2427 533.286)" class="st9 st7">Generate new theme</text>
-	<line id="XMLID_130_" class="st20" x1="181.7" y1="532.2" x2="226.9" y2="532.2"/>
-	<rect id="XMLID_141_" x="80.3" y="569.7" class="st18" width="75.5" height="18.4"/>
+	<line id="XMLID_130_" class="st21" x1="181.7" y1="532.2" x2="226.9" y2="532.2"/>
+	<rect id="XMLID_141_" x="80.3" y="569.7" class="st19" width="75.5" height="18.4"/>
 	<text id="XMLID_140_" transform="matrix(1 0 0 1 105.5929 580.0502)" class="st3 st7">End</text>
-	<rect id="XMLID_139_" x="67.3" y="560.2" class="st19" width="102.6" height="27.9"/>
-	<rect id="XMLID_138_" x="244.5" y="569.7" class="st18" width="324.4" height="18.4"/>
+	<rect id="XMLID_139_" x="67.3" y="560.2" class="st20" width="102.6" height="27.9"/>
+	<rect id="XMLID_138_" x="244.5" y="569.7" class="st19" width="324.4" height="18.4"/>
 	<text id="XMLID_137_" transform="matrix(1 0 0 1 244.4812 580.0512)" class="st9 st7">Rythm is at low volume and low-passed</text>
-	<line id="XMLID_136_" class="st20" x1="181.9" y1="578.9" x2="227.1" y2="578.9"/>
+	<line id="XMLID_136_" class="st21" x1="181.9" y1="578.9" x2="227.1" y2="578.9"/>
 </g>
 </svg>
