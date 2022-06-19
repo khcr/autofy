@@ -7,7 +7,7 @@ function startGame() {
 
 var happiness_level = -1;
 var speed_level = -1;
-const nb_level = 4;
+const nb_level = 5;
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
