@@ -9,6 +9,15 @@ We used principaly the software Sonic Pi by Sam Aaron, in Ruby, as it enabled us
 
 ## Overview
 
+### Files structure
+
+- `sonic_pi_buffers`: Contains the source files for SonicPi, the music code. File `main.rb` is the starting point, the other files are modules that define functions and parameters.
+- `static`: assets for the website (CSS/JS/images).
+- `templates`: HTML views.
+- `sonic-pi`: SonicPi software (compiled and slightly modified for our purpose).
+- `app.py`: Flask webapp.
+- `icecast.xml`, `ices.xml`: config files for audio streaming server. 
+
 ### User interface
 
 The interface is basically split in two collumns. The left side have three different setting buttons. The highest is the play/pause button which is clickable. The second controls the BPM of the music. The most important one, we call it : "The mood control panel", is a XY controller, with each axis divided 6 values. and you can move the cursor the pannel to control the mood of the song.
