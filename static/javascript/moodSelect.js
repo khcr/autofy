@@ -5,8 +5,8 @@ function startGame() {
     myGameArea.start();
 }
 
-var happiness_level = -1;
-var speed_level = -1;
+var happiness_level = 3;
+var speed_level = 3;
 const nb_level = 5;
 var myGameArea = {
     canvas : document.createElement("canvas"),
@@ -29,8 +29,9 @@ var myGameArea = {
                 isClick = true
                 myGameArea.x = e.clientX - myGameArea.context.canvas.offsetLeft - 5;
                 myGameArea.y = e.clientY - myGameArea.context.canvas.offsetTop - 5;
-                happiness_level = Math.round(myGameArea.x * nb_level / myGameArea.context.canvas.width) + 1;
-                speed_level = 5 - Math.round(myGameArea.y * nb_level / myGameArea.context.canvas.height);
+                happiness_level = Math.round(myGameArea.x * nb_level / myGameArea.context.canvas.width);
+                speed_level = nb_level - Math.round(myGameArea.y * nb_level / myGameArea.context.canvas.height);
+                console.log(happiness_level, speed_level)
                 // document.getElementById("levelDisplayer").innerHTML = "Happiness level : " + happiness_level + "<p>Speed level : " + speed_level
             } else {
                 isClick = false;
