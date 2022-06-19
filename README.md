@@ -102,6 +102,8 @@ To run the webserver, in the root folder run `flask run`. You should see the mes
 
 If both servers successfully booted, you should be able to use the web interface at `http://127.0.0.1:5000` and play with the music. Be aware that changing a parameter may not be reflected directly and can take up to a few minutes. If you want to see the effect directly, press pause and play again to restart.
 
+When the SonicPi server is stopped, a process might stay alive and block the port 4560, which prevents the restart. Run `lsof -nP -i:4560` to display the PID of the process and `kill -9 $PID` to stop it.
+
 ## Few noted bugs left...
 
 If the bpm is too fast (more than 150), then Sonic Pi has a hard time following everything that it has to do and gives a runtime error. Thus, the bpm is limited between 1 and 140 on the web interface.
