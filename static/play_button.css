@@ -12,6 +12,8 @@
 [name="tgl-button"] + label {
   display: inline-block;
   cursor: pointer;
+  margin-left: 10%; 
+  margin-top: 10%
 }
 
 [name="tgl-button"] + label .button {

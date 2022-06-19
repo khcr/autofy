@@ -1,0 +1,24 @@
+.playButton{
+    display:grid;
+    place-items:center;
+    cursor:pointer; 
+    padding:4rem;
+    background:#efeeee;
+    border-radius:50%;
+    transition:all 0.3s ease-in;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.1),
+        -10px -10px 10px rgba(255,255,255,0.6);
+}
+.playButton .fas{
+    display:grid;
+    place-items:center;
+    font-size:4rem;
+    color:gray;
+}
+.playButton:active{
+    box-shadow: inset 10px 10px 10px rgba(0,0,0,0.1),
+        inset -10px -10px 10px rgba(255,255,255,0.6);
+    }
+.playButton:active .fas{
+    color:#721efa;
+}
