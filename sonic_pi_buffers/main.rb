@@ -5,6 +5,8 @@ set :place, '$place'
 set :intensity, $intensity # from 0 to 5
 set :mood, $mood # from 0 to 5
 
+use_random_seed Time.now.to_i
+
 #GLOBAL VARIABLES
 #global global ones
 set :counter, 0
