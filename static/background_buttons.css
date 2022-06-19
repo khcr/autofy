@@ -16,6 +16,12 @@
     border-radius: 8px;
 }
 
+.disablebackgrdbtn {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /* Clear floats (clearfix hack) */
 .btn-group:after {
     content: "";
