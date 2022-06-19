@@ -34,6 +34,8 @@ The next theme is generated from the previous with 3 possible modulations:
 - Moving to the fourth degree. The tonic is moved a fourth up. A new scale is built, starting from the new tonic and using the mode of the previous theme. The fourth degree is called a neighbour tone, as a scale tranposed a fourth higher still the contains the majority of the notes of the first scale.
 The cadences are built according to selected modulation, generally following a harmonic sequence, 4-5-1 or 5-1 pattern.
 
+One the modulation scheme is chosen, the mode is selected randomly in a set that varies depending on the mood and on the section of the song.
+
 ### Melody
 The melody follow the harmonic progressioin. When a theme is played, one of its chords is randomly selected and a melodic phrase is played on it. The melodic phrase can be built in 3 different ways:
 - create an arpeggio from 4 notes taken randomly in the chord
