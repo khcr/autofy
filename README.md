@@ -39,6 +39,7 @@ The melody follow the harmonic progressioin. When a theme is played, one of its 
 - create an arpeggio from 4 notes taken randomly in the chord
 - create a rising or a falling sequence from a degree selected randomly in the scale. The sequence constist of 3 notes neighbour in the scale
 - create an enclosure from a degree selected randomly in the scale, i.e. playing a note upper, a note lower and then the target note (here the scale degree selected at random).
+
 Once the musical phrase is built, its notes are played with a probability relative the intensity set by the user in the mood controler pannel. If the intensity is high, almost all notes of the phrase are played, and vice versa.
 ### Background
 The background noises are sampled from the website https://mixkit.co/free-sound-effects/ to get different atmospheres, characteristic of Lo-Fi music. The user can therefore choose different weathers:
