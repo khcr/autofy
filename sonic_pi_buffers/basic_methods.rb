@@ -177,9 +177,25 @@ define :theme_timestamps do |length|
   return [t1,t2,t3,t4]
 end
 
-define :cadence_rhythm do |length|
+define :cadence_rhythm do |length,num_chords|
+  
   eighth = length.to_f/8
-  return [0, 2*eighth, 4*eighth]
+  rhythm = []
+  
+  if num_chords == 4
+    rhythm = [0, 2*eighth, 4*eighth,6*eighth]
+  end
+  
+  if num_chords == 3
+    rhythm = [0, 2*eighth, 4*eighth]
+  end
+  
+  if num_chords == 2
+    rhythm = [0,4*eighth]
+  end
+  
+  return rhythm
+  
 end
 
 
