@@ -9,6 +9,15 @@ We used principaly the software Sonic Pi by Sam Aaron, in Ruby, as it enabled us
 
 ## Overview
 
+### Files structure
+
+- `sonic_pi_buffers`: Contains the source files for SonicPi, the music code. File `main.rb` is the starting point, the other files are modules that define functions and parameters.
+- `static`: assets for the website (CSS/JS/images).
+- `templates`: HTML views.
+- `sonic-pi`: SonicPi software (compiled and slightly modified for our purpose).
+- `app.py`: Flask webapp.
+- `icecast.xml`, `ices.xml`: config files for audio streaming server. 
+
 ### User interface
 
 The interface is basically seperate in two collumns. The right one have three different settings button. The highest is the play/pause button which is clickable. The second, controls the BPM of the music. And the most important one, we called it : "The mood control panel". Each axis have six stages and you can click on the pannel to change the mood of the song.
@@ -75,6 +84,7 @@ SonicPi is a great tool to play with music, but the distribution of the outcome 
 - A SonicPi instance running the code and producing the music based on parameters
 - A audio streaming server (e.g Icecast)
 - A webserver serving the user interface and exposing an API to talk with SonicPi
+
 The main challenge is to deal with SonicPi, which was not designed for such purpose. Therefore, we have not reached the final goal yet. As of today, we can run a headless (without GUI) SonicPi server and control it via OSC requests. OSC stands for Open Sound Control and is a protocol for audio networking. OSC is well supported by SonicPi, which can be exclusively controlled via OSC requests (e.g run code or stop the music, update parameters, etc). The current website is fully working, but instead of playing music from a stream, it is a remote for SonicPi, i.e. it controls what SonicPi outputs.
 
 ### Installation
@@ -86,9 +96,9 @@ Requirements:
 - Python 3.6+
 - Flask 2.0+
 
-To run the SonicPi server, go to the folder `sonic-pi/app/server/ruby/bin` and run `ruby sonic-pi-server.rb`. You should see the message `Sonic Pi Server successfully booted.`.
+To run the SonicPi server, go to the folder `sonic-pi/app/server/ruby/bin` and run `ruby sonic-pi-server.rb`. You should see the message `Sonic Pi Server successfully booted.`
 
-To run the webserver, in the root folder run `flask run`. You should see the message `Running on http://127.0.0.1:5000/`.
+To run the webserver, in the root folder run `flask run`. You should see the message `Running on http://127.0.0.1:5000/`
 
 If both servers successfully booted, you should be able to use the web interface at `http://127.0.0.1:5000` and play with the music. Be aware that changing a parameter may not be reflected directly and can take up to a few minutes. If you want to see the effect directly, press pause and play again to restart.
 
