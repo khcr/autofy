@@ -1,0 +1,4 @@
+## Interactive interface
+
+The interface is basically seperate in two collumns. The right one have three different settings button. The highest is the play/pause button which is clickable. The second, controls the BPM of the music. And the most important one, we called it : "The mood controler pannel". Each axis have six stages and you can click on the pannel to change the mood of the song.
+The second collumns controls all possible background effect or ambiance that you want. By clicking on them you can have sound from a particular weather or a particular place in background of the music. Also you could see the background image changing depending on which background you choose.

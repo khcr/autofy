@@ -14,7 +14,10 @@ We used principaly the software Sonic Pi by Sam Aaron, in Ruby, as it enabled us
 
 ## How to run this project on your computer
 
-## About the music: what should expect, what can change, what you can choose
+### Interactive interface
+
+The interface is basically seperate in two collumns. The right one have three different settings button. The highest is the play/pause button which is clickable. The second, controls the BPM of the music. And the most important one, we called it : "The mood controler pannel". Each axis have six stages and you can click on the pannel to change the mood of the song.
+The second collumns controls all possible background effect or ambiance that you want. By clicking on them you can have sound from a particular weather or a particular place in background of the music. Also you could see the background image changing depending on which background you choose.
 ### Overall structure
 Hopefully you know a little bit about music!
 We decided to have song-like structures, to try to simulate the radio effect, where songs change one after the other. A song is made different stages: a beginning, a "normal" middle part (`NOR1`), a bridge, another "normal" middle part(`NOR2`), and an end. In pop music, the normal middle part is usually the verse and chorus. A counter counts each beat, and signals when a change is made between each stage, and also when the song ends (the counter has reached the end stage). The stages have a randomized duration, to get the songs to last between 3 and 6 minutes no matter the speed.
@@ -42,7 +45,7 @@ and different places:
 - Nowhere 
 
 ### Effects 
-
+blablabla
 
 ## Useful commands
 

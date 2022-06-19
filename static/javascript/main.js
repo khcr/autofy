@@ -16,7 +16,7 @@ background_button.onclick = (button) => {
     weather_state = button.srcElement.dataset.value3
     set_background(weather_state, place_state)
     document.getElementById("backButtonState").innerHTML = "<p>You are listening music with " + button.srcElement.value + " background"
-
+    console.log(button.srcElement.value)
     // update the music
     const data = {
         "path" : "rate",
@@ -32,6 +32,7 @@ places_button.onclick = (button) => {
     set_background(weather_state, place_state)
     //document.documentElement.style.setProperty('--background-image', "url('./" + button.srcElement.dataset.value1 + "')")
     document.getElementById("placeButtonState").innerHTML = "<p>You are listening music in " + button.srcElement.value
+    console.log(button.srcElement.value)
 }
 
 function getURLName(weather, place) {
@@ -60,7 +61,6 @@ function set_background(weather, place) {
             url = getURLName(weather, place)
         }
     }
-    console.log(url)
     document.documentElement.style.setProperty('--background-image', url)
 }
 
