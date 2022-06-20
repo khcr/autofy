@@ -1,7 +1,7 @@
 #USER DEFINABLE VARIABLES
-set :bpm, $rate
-set :weather, '$weather'
-set :place, '$place'
+set :bpm, $rate # from 1 to 140
+set :weather, '$weather' # ['sunny_morning', 'light_rain', 'thunder', 'hot_summer_night', 'none']
+set :place, '$place' # ['city', 'country_side', 'space', 'coffee_shop', 'none']
 set :intensity, $intensity # from 0 to 5
 set :mood, $mood # from 0 to 5
 

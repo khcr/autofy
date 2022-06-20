@@ -104,6 +104,10 @@ If both servers successfully booted, you should be able to use the web interface
 
 When the SonicPi server is stopped, a process might stay alive and block the port 4560, which prevents the restart. Run `lsof -nP -i:4560` to display the PID of the process and `kill -9 $PID` to stop it.
 
+### Alternative
+
+If you cannot run the previous steps, you can still install Sonic Pi on your computer (Windows/Mac OS). Then, start the program, load and run every file in `sonic_pi_buffers` in the pages (bottom of the window, from 0 to 9). The file `main.rb` must be the last to be run, you can modify the user defined variables at the top of the file.
+
 ## Few noted bugs left...
 
 If the bpm is too fast (more than 150), then Sonic Pi has a hard time following everything that it has to do and gives a runtime error. Thus, the bpm is limited between 1 and 140 on the web interface.
