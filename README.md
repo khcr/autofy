@@ -94,11 +94,21 @@ We only tested the setup on Intel Macbook Pro running Mac OS 10.15 (SonicPi was 
 Requirements:
 - Ruby 2.7+
 - Python 3.6+
-- Flask 2.0+
+- Flask 2.0+ (`python3 -m pip install flask`)
+- Xcode
+- Qt6+, CMake (`brew install qt cmake`)
 
-To run the SonicPi server, go to the folder `sonic-pi/app/server/ruby/bin` and run `ruby sonic-pi-server.rb`. You should see the message `Sonic Pi Server successfully booted.`.
+First, we need to build SonicPi:
+In `sonic-pi/app`, run:
+- `./mac-prebuild.sh`
+- `./mac-config.sh`
 
-To run the webserver, in the root folder run `flask run`. You should see the message `Running on http://127.0.0.1:5000/`.
+In `sonic-pi/app/build`, run:
+- `cmake --build . --config Release`
+  
+Finally, to run the SonicPi server, go to the folder `sonic-pi/app/server/ruby/bin` and run `ruby sonic-pi-server.rb`. You should see the message `Sonic Pi Server successfully booted.`
+
+To run the webserver, in the root folder run `flask run`. You should see the message `Running on http://127.0.0.1:5000/`
 
 If both servers successfully booted, you should be able to use the web interface at `http://127.0.0.1:5000` and play with the music. Be aware that changing a parameter may not be reflected directly and can take up to a few minutes. If you want to see the effect directly, press pause and play again to restart.
 
